@@ -1,0 +1,112 @@
+@import "./../../common/colors";
+
+.footer-top {
+  padding: 65px 0 120px;
+  background-color: $black;
+
+  .footer-top-container {
+    display: flex;
+    justify-content: space-between;
+    
+    .sub-heading { margin-bottom: 25px; }
+
+    .footer-top-left { 
+      flex: 0 0 33.3%; 
+
+      .about-details { 
+        color: $secondaryWhite; 
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  background-color: $darkBlack;
+
+  .footer-bottom-container {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .social-links {
+      display: flex;
+      flex: 0 0 10%;
+      justify-content: space-between;
+
+      a {
+        color: $lightBlue;
+        text-indent: -9999px;
+        transition: color .3s ease;
+
+        &::before {
+          font-family: "FontAwesome";
+          font-size: 20px;
+          float: left;
+          text-indent: 0;
+        }
+      }
+
+      .facebook::before { content: "\f39e"; }
+      .twitter::before { content: "\f099"; }
+      .vimeo::before { content: "\f40a"; }
+      .instagram::before { content: "\f16d"; }
+    }
+
+    .privacy-terms-container {
+      display: flex;
+      flex: 0 0 15%;
+      justify-content: space-between;
+
+      .privacy, .terms {
+        color: $lightBlue;
+        font-size: 12px;
+        text-transform: capitalize;
+        transition: color .3s ease;
+        white-space: nowrap;
+      }
+
+      .privacy { padding-right: 8px; }
+
+      .terms {
+        padding-left: 8px;
+        border-left: 1px solid $lightBlue;
+      }
+    }
+  }  
+}
+
+/*media query for hover from 995px starts here*/
+@media only screen and (min-width: 995px) {
+  .footer-bottom .social-links a:hover { color: $lychee; }
+  .footer-bottom .footer-bottom-container .privacy-terms-container a:hover { color: $lychee; }
+}
+
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+  .footer-bottom .footer-bottom-container .social-links { flex: 0 0 15%; }
+}
+
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  .footer-top-container, .footer-bottom-container {
+    flex-direction: column;
+  }
+
+  .footer-top-left + .sub-heading {
+    margin-top: 25px;
+  }
+
+  .footer-bottom .footer-bottom-container .social-links { 
+    width: 20%;
+    margin-bottom: 20px;
+  }
+
+  .sponsors-img-container img { width: 40%; }
+}
+
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  .footer-bottom .footer-bottom-container .social-links { width: 30%; }
+}

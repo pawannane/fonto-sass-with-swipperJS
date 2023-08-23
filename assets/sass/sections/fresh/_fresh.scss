@@ -1,0 +1,50 @@
+@import "./../../common/colors";
+
+.fresh-designs-section {
+  padding: 85px 0 175px;
+  background-color: $lightBlue;
+
+  .img-container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .img-left {
+      flex: 0 0 49%;
+      li {
+        margin-bottom: 20px;
+        border: 10px solid $white;
+        box-shadow: 5px 5px 2px $boxColor;
+
+        &:last-child { margin-bottom: 0; }
+      }
+      
+    }
+
+    .img-right {
+      flex: 0 0 49%;
+      img {
+        border: 10px solid $white;
+        box-shadow: 5px 5px 2px $boxColor;
+
+        &:first-child { margin-bottom: 15px; }
+      }
+    }
+  }
+
+  /*media query for 768px starts here*/
+  @media only screen and (max-width: 768px) {
+    .img-container { width: 98%; }
+  }
+
+  /*media query for 480px starts here*/
+  @media only screen and (max-width: 480px) {
+    .img-container .img-left { flex: 0 0 100%; }
+
+    .img-container .img-right { 
+      margin-top: 20px;
+      flex: 0 0 100%; 
+    }
+  }
+}

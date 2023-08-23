@@ -1,0 +1,161 @@
+@import "./../../common/colors";
+
+.reviews-section {
+  padding: 40px 0;
+  background-color: $black;
+
+  .wrapper {
+    max-width: 1246px;
+    width: 91.2%;
+  }
+
+  .reviews-container-top {
+    display: flex;
+    justify-content: space-between;
+
+    .slider { 
+      display: flex; 
+    }
+
+    .double-quotes {
+      margin-right: 2.5%;
+      font-size: 0;
+
+      &::after {
+        content: "\f10e";
+        color: $darkBlack;
+        font-family: "FontAwesome";
+        float: right;
+        text-indent: 0;
+        font-size: 65px;
+      }
+    }
+
+    .review-detail {
+      color: $white;
+      font-size: 30px;
+      line-height: 1.5;
+    }
+
+    .reviewer-details { text-align: center; }
+    .profile-pic { border-radius: 50%; }
+
+    .profile-name { 
+      margin-top: 20px;
+      color: $white; 
+    }
+
+    .profile-email { 
+      margin-top: 5px;
+      color: $lychee; 
+      transition: color .3s ease;
+    }
+  }
+
+  .reviews-container-bottom {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .left-right-icons {
+      position: absolute;
+      left: 10%;
+
+      a {
+        padding: 10px;
+        border: 1px solid $lychee;
+        font-size: 10px;
+        text-indent: -9999px;
+        transition: all .3s ease;
+
+        &::after {
+          color: $lychee;
+          font-family: "FontAwesome";
+          float: right;
+          text-indent: 0;
+        }
+      }
+
+      .left::after { content: "\f100"; }
+      .right::after { content: "\f101"; }
+    }
+
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li { 
+        margin-right: 10px;
+        &:last-child { margin-right: 0; }
+      }
+
+      a {
+        text-indent: -9999px;
+
+        &::after {
+          content: "\f111";
+          border: .5px solid $lychee;
+          border-radius: 50%;
+          color: $black;
+          font-family: "FontAwesome";
+          font-size: 10px;
+          float: right;
+          text-indent: 0;
+        }
+      }
+
+      .active-radio::after { color: $lychee; }
+    }
+  }
+
+  /*media query for hover from 995px starts here*/
+  @media only screen and (min-width: 995px) {
+    .profile-email:hover { color: $white; }
+
+    .left-right-icons {
+      a:hover {
+        border: 1px solid $white;
+        &::after { color: $white; }
+      }
+    }
+
+    .slider-container {
+      a:hover::after { color: $lychee; }
+    }
+  }
+
+  /*media query for 995px starts here*/
+  @media only screen and (max-width: 995px) {
+    // .reviews-container-top .review-detail { width: 60%; }
+  }
+
+  /*media query for 768px starts here*/
+  @media only screen and (max-width: 768px) {
+    .reviews-container-top .review-detail { font-size: 20px; }
+  }
+
+  /*media query for 560px starts here*/
+  @media only screen and (max-width: 560px) {
+    // .reviews-container-top .review-detail { width: 50%; }
+    .reviews-container-top .review-detail { font-size: 16px; }
+  }
+
+  /*media query for 480px starts here*/
+  @media only screen and (max-width: 480px) {
+    .reviews-container-top .double-quotes::after { font-size: 35px; }
+    .reviews-container-top .review-detail { font-size: 14px; }
+    .profile-details { text-align: center; }
+    .profile-pic { width: 80%; }
+    .profile-name, .profile-email { font-size: 14px; }
+  }
+
+  /*media query for 375px starts here*/
+  @media only screen and (max-width: 375px) {
+    .reviews-container-top .double-quotes::after { font-size: 25px; }
+    .profile-pic { width: 60%; }
+
+  }
+}

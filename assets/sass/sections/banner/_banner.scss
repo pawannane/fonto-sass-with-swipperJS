@@ -1,0 +1,12 @@
+.banner-section {
+  position: relative;
+
+  .wrapper {
+    max-width: 1366px;
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

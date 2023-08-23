@@ -1,0 +1,25 @@
+@import "./colors";
+
+%fontWeight {
+  font-weight: 600;
+}
+
+.section-heading {
+  color: $black;
+  font-size: 40px;
+  @extend %fontWeight;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sub-heading {
+  color: $white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/*media query for 480px starts here*/
+@media only screen and (max-width: 480px) {
+  .section-heading { font-size: 28px; }
+  .sub-heading { font-size: 14px; }
+}

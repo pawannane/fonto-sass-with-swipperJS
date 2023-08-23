@@ -1,0 +1,177 @@
+@import "./../../common/colors";
+
+.header {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+
+  .header-container .active-nav ul {
+    transform: translateY(0);
+  }
+}
+
+.html-scroll {
+  overflow-y: hidden;
+}
+
+.header-container {
+  padding: 30px 0;
+  border-bottom: 1px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    a {
+      color: $white;
+      font-size: 38px;
+      text-transform: capitalize;
+      transition: color .3s ease;
+    }
+  }
+
+  .header-nav {
+    width: 50%;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform .4s ease;
+
+      li {
+        a {
+          color: $white;
+          font-size: 15px;
+          font-weight: 600;
+          text-transform: capitalize;
+          transition: color .3s ease;
+        }
+      }
+
+      .dropdown-container {
+        a::after {
+          padding-left: 10px;
+          font-family: "FontAwesome";
+          font-size: 8px;
+        }
+
+        .dropdown::after {
+          content: "\f107";
+        }
+      }
+
+      .cart-search {
+        display: flex;
+        align-items: center;
+
+        a {
+          text-indent: -9999px;
+
+          &::after {
+            font-family: "FontAwesome";
+            float: right;
+            text-indent: 0;
+          }
+        }
+
+        .shop::after {
+          content: "\f290";
+          font-size: 32px;
+        }
+
+        .search::after {
+          content: "\f002";
+          margin-left: 15px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0.5%;
+    display: block;
+    background-color: $white;
+    text-indent: -9999px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  /*media query for hover from 995px starts here*/
+  @media only screen and (min-width: 995px) {
+    .logo {
+      a:hover {
+        color: $lychee;
+      }
+    }
+
+    .header-nav {
+      a:hover {
+        color: $lychee;
+      }
+    }
+  }
+
+  /*media query for 995px starts here*/
+  @media only screen and (max-width: 995px) {
+    .header-nav {
+      width: 60%;
+    }
+  }
+
+  /*media query for 768px starts here*/
+  @media only screen and (max-width: 768px) {
+    .hamburger {
+      display: block;
+      z-index: 1;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      -webkit-transform: translateY(8px) rotate(45deg);
+      -ms-transform: translateY(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      -webkit-transform: translateY(-8px) rotate(-45deg);
+      -ms-transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .header-nav {
+      ul {
+        width: 100%;
+        padding: 40px 2%;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $lychee;
+        transform: translateY(-100%);
+
+        li {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  /*media query for 480px starts here*/
+  @media only screen and (max-width: 480px) {
+    .logo a { font-size: 25px; }
+  }
+}

@@ -1,0 +1,110 @@
+@import "./../../common/colors";
+
+.designs-section {
+  padding: 70px 0 140px;
+  background-color: $lightBlue;
+
+  .card-container {
+    margin-top: 105px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    li {
+      position: relative;
+      flex: 0 0 23%;
+      box-shadow: 8px 8px $boxColor;
+
+      .product-details {
+        padding: 25px 15px 35px;
+        background-color: $white;
+      }
+
+      .product-name { 
+        color: $black;
+        font-size: 14px; 
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+
+      .product-price, .out-of-stock, .sale-container { 
+        margin-top: 20px; 
+        color: $black;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .price { 
+        color: $lychee;
+        font-size: 14px;
+        font-weight: 600;
+
+        &::before {
+          content: "\f153";
+          font-family: "FontAwesome";
+          font-size: 12px;
+        }
+      }
+
+      .sale {
+        color: $saleColor;
+        text-decoration: line-through;
+        text-decoration-color: $lychee;
+
+        &::before {
+          content: "\f153";
+          font-family: "FontAwesome";
+          font-size: 12px;
+        }
+      }
+
+      .stock-badge, .sale-badge {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .stock-badge {
+        position: absolute;
+        right: -8%;
+        top: -5%;
+        background-color: $saleColor;
+      }
+      
+      .sale-badge {
+        position: absolute;
+        right: -8%;
+        top: -5%;
+        background-color: $lychee;
+      }
+    }
+  }
+
+  /*media query for 768px starts here*/
+  @media only screen and (max-width: 768px) {
+    .card-container {
+      li {
+        margin-bottom: 40px;
+        flex: 0 0 30%;
+      }
+    }
+  }
+
+  /*media query for 560px starts here*/
+  @media only screen and (max-width: 560px) {
+    .card-container li { flex: 0 0 48%; }
+  }
+
+  /*media query for 480px starts here*/
+  @media only screen and (max-width: 480px) {
+    .card-container li { flex: 0 0 95%; }
+  }
+}
